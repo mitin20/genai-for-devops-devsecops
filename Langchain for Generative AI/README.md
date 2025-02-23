@@ -1,4 +1,31 @@
-# goto https://colab.research.google.com/drive/xxx
+# Prerequisites for local runs
+
+# Create a new conda environment with Python 3.12
+conda create -n genai python=3.12
+
+# Activate the environment
+conda activate genai
+
+# Install required packages
+conda install -c conda-forge langchain-community
+conda install -c huggingface huggingface-hub
+conda install -c conda-forge sentence-transformers
+
+# Verify Python version
+python --version
+
+# List all conda environments
+conda env list
+
+# To deactivate the environment when you're done
+conda deactivate
+
+
+
+# Prerequisites for local runs
+```
+open https://colab.research.google.com/drive/xxx
+```
 
 # langchain and openai install
 ```
@@ -23,36 +50,28 @@ print(llm.invoke(text))  # or use llm.predict(text)
 
 # Connect to Hugging Face Hub
 ```
-!pip install huggingface_hub > /dev/null
+pip install huggingface_hub > /dev/null
      
 ```
-
+curl -X GET "https://huggingface.co/api/whoami" -H "Authorization: Bearer YOUR_HUGGINGFACE_API_TOKEN"
 ```
-from getpass import getpass
-
-HUGGINGFACEHUB_API_TOKEN = getpass()
-```    
-
-```
-import os
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
-```
-
-     
-```
-from langchain_community.llms import HuggingFaceHub
-
-repo_id = "google/flan-t5-base" # See https://huggingface.co/models?pipeline_tag=text-generation&sort=downloads for some other options
-
-llm = HuggingFaceHub(repo_id=repo_id, model_kwargs={"temperature":0, "max_length":64})
-llm
+pip install langchain-community huggingface_hub
 ```     
 
 ```
-text = "Please answer the following question. What is the boiling point of water in farenheit?"
+import os
+from langchain_community.llms import HuggingFaceHub
 
-llm(text)
-     
+# Set API token (replace with your actual token)
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = "your_huggingface_api_token"
+
+repo_id = "google/flan-t5-base"
+
+llm = HuggingFaceHub(repo_id=repo_id, model_kwargs={"temperature": 0, "max_length": 64})
+
+text = "Please answer the following question. What is the boiling point of water in Fahrenheit?"
+
+print(llm.invoke(text))  # Use .invoke() instead of calling the object directly     
 ```
 
 
