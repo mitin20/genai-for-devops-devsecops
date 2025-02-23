@@ -1,25 +1,35 @@
 # Prerequisites for local runs
 
-# Create a new conda environment with Python 3.12
+## Create a new conda environment with Python 3.12
+```
 conda create -n genai python=3.12
-
-# Activate the environment
+```
+## Activate the environment
+```
 conda activate genai
+```
 
-# Install required packages
+## Install required packages
+```
 conda install -c conda-forge langchain-community
 conda install -c huggingface huggingface-hub
 conda install -c conda-forge sentence-transformers
+```
 
-# Verify Python version
+## Verify Python version
+```
 python --version
+```
 
-# List all conda environments
+## List all conda environments
+```
 conda env list
+```
 
-# To deactivate the environment when you're done
+## To deactivate the environment when you're done
+```
 conda deactivate
-
+```
 
 
 # Prerequisites for local runs
@@ -33,7 +43,7 @@ pip install --upgrade langchain langchain-community
 ```
 
 
-# set openai token
+## set openai token
 ```
 import os
 from langchain_community.llms import OpenAI
@@ -48,7 +58,7 @@ print(llm.invoke(text))  # or use llm.predict(text)
 ```
 
 
-# Connect to Hugging Face Hub
+## Connect to Hugging Face Hub
 ```
 pip install huggingface_hub > /dev/null
      
@@ -75,7 +85,7 @@ print(llm.invoke(text))  # Use .invoke() instead of calling the object directly
 ```
 
 
-# Chat Models
+## Chat Models
 ```
 from langchain_openai import ChatOpenAI
 from langchain.schema import (
@@ -95,7 +105,7 @@ chat.invoke(messages)
 ```
      
 
-# Have A Conversation
+## Have A Conversation
 ```
 chat = ChatOpenAI(temperature=0,
                   max_tokens=1000)
