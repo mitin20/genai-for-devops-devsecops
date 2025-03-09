@@ -1,0 +1,8 @@
+product_id,user_id,rating,date,title,review
+A123,U001,5,2023-07-01,Fantastic Product!,I absolutely loved this product! It exceeded my expectations in every way. Highly recommended!
+A124,U002,4,2023-06-20,"Very Good, But Could Improve","I liked the overall quality and design. However, it could use a few tweaks to make it perfect. Still, good value for the money."
+A125,U003,2,2023-06-15,Disappointing Experience,"It looked promising initially, but the performance was underwhelming. Not worth the price."
+A126,U004,3,2023-06-10,Decent But Not Outstanding,The product is decent for its price range. It does its job but lacks the features that other competitors offer.
+A127,U005,1,2023-06-05,Would Not Recommend,It broke within a week of purchase. The customer service was unresponsive. Very disappointed.
+A128,U006,5,2023-05-25,Exceeded Expectations,"I wasn’t expecting much, but this product blew me away. Great craftsmanship and durability."
+A129,U007,4,2023-05-20,Solid Purchase,"Good quality and works as described. Only minor issues, but overall satisfied with the purchase."
